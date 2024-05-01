@@ -17,18 +17,19 @@ void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
                 C->cells[i][j][k].value = A->cells[i][j][k].value * B->cells[i][j][k].value;
 
                 for (usz o = 1; o <= STENCIL_ORDER; ++o) {
+		    f64 denom = 1/pow(17.0,(f64)o); 
                     C->cells[i][j][k].value += A->cells[i + o][j][k].value *
-                                               B->cells[i + o][j][k].value / pow(17.0, (f64)o);
+                                               B->cells[i + o][j][k].value * denom;
                     C->cells[i][j][k].value += A->cells[i - o][j][k].value *
-                                               B->cells[i - o][j][k].value / pow(17.0, (f64)o);
+                                               B->cells[i - o][j][k].value * denom;
                     C->cells[i][j][k].value += A->cells[i][j + o][k].value *
-                                               B->cells[i][j + o][k].value / pow(17.0, (f64)o);
+                                               B->cells[i][j + o][k].value * denom;
                     C->cells[i][j][k].value += A->cells[i][j - o][k].value *
-                                               B->cells[i][j - o][k].value / pow(17.0, (f64)o);
+                                               B->cells[i][j - o][k].value * denom;
                     C->cells[i][j][k].value += A->cells[i][j][k + o].value *
-                                               B->cells[i][j][k + o].value / pow(17.0, (f64)o);
+                                               B->cells[i][j][k + o].value * denom;
                     C->cells[i][j][k].value += A->cells[i][j][k - o].value *
-                                               B->cells[i][j][k - o].value / pow(17.0, (f64)o);
+                                               B->cells[i][j][k - o].value * denom;
                 }
             }
         }
