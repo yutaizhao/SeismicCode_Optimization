@@ -9,9 +9,10 @@ if(CMAKE_BUILD_TYPE EQUAL Debug)
 endif()
 
 find_package(MPI REQUIRED)
+find_package(OpenMP REQUIRED)
 
 add_subdirectory(src)
 
 add_executable(top-stencil src/main.c)
 target_include_directories(top-stencil PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(top-stencil PRIVATE MPI::MPI_C stencil::stencil stencil::utils)
+target_link_libraries(top-stencil PRIVATE MPI::MPI_C OpenMP::OpenMP_C stencil::stencil stencil::utils)

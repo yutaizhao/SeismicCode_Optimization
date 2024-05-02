@@ -1,5 +1,6 @@
 #include "stencil/solve.h"
 
+#include <omp.h>
 #include <assert.h>
 #include <math.h>
 #define min(a, b) ((a) < (b) ? (a) : (b))
@@ -15,6 +16,7 @@ void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
     usz bloci = 8 ;
     usz blocj = 8 ;
     usz block = 8 ;
+#pragma omp parallel for num_threads(10) 
     for (usz kk = STENCIL_ORDER; kk < dim_z - STENCIL_ORDER; kk += block) {
         for (usz jj = STENCIL_ORDER; jj < dim_y - STENCIL_ORDER; jj += blocj) {
             for (usz ii = STENCIL_ORDER; ii < dim_x - STENCIL_ORDER; ii += bloci) {
@@ -35,9 +37,9 @@ void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
                         }
                     }
                 }
-	    }
-	}
-    }
-
-                mesh_copy_core(A, C);
             }
+        }
+    }
+    
+    mesh_copy_core(A, C);
+}
