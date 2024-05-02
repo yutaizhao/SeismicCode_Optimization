@@ -110,7 +110,7 @@ void mesh_copy_core(mesh_t* dst, mesh_t const* src) {
     assert(dst->dim_x == src->dim_x);
     assert(dst->dim_y == src->dim_y);
     assert(dst->dim_z == src->dim_z);
-#pragma omp parallel for num_threads(10)
+#pragma omp parallel for
     for (usz k = STENCIL_ORDER; k < dst->dim_z - STENCIL_ORDER; ++k) {
         for (usz j = STENCIL_ORDER; j < dst->dim_y - STENCIL_ORDER; ++j) {
             for (usz i = STENCIL_ORDER; i < dst->dim_x - STENCIL_ORDER; ++i) {

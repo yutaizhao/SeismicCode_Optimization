@@ -6,6 +6,7 @@
 #include "stencil/mesh.h"
 #include "stencil/solve.h"
 
+#include <omp.h>
 #include <mpi.h>
 #include <stdio.h>
 
@@ -65,7 +66,14 @@ static void save_results(
 }
 
 i32 main(i32 argc, char* argv[argc + 1]) {
+    
     MPI_Init(&argc, &argv);
+    omp_set_num_threads(4);  // Set the number of threads to 4
+#pragma omp parallel
+    {
+        int tid = omp_get_thread_num();
+        printf("Hello from thread %d\n", tid);
+    }
 
     i32 rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
