@@ -301,3 +301,87 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-ZE3szR"
+      binary: "/scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-ZE3szR"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -g -O3 -fopt-info-vec"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-ZE3szR'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8ba8f/fast
+        make: Warning: File 'Makefile' has modification time 23 s in the future
+        /usr/bin/make  -f CMakeFiles/cmTC_8ba8f.dir/build.make CMakeFiles/cmTC_8ba8f.dir/build
+        make[1]: Entering directory '/scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-ZE3szR'
+        make[1]: Warning: File 'CMakeFiles/cmTC_8ba8f.dir/build.make' has modification time 23 s in the future
+        Building C object CMakeFiles/cmTC_8ba8f.dir/test_mpi.c.o
+        /usr/bin/cc   -g -O3 -fopt-info-vec  -std=gnu17 -o CMakeFiles/cmTC_8ba8f.dir/test_mpi.c.o -c /scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-ZE3szR/test_mpi.c
+        Linking C executable cmTC_8ba8f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ba8f.dir/link.txt --verbose=1
+        /usr/bin/cc  -g -O3 -fopt-info-vec  -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_8ba8f.dir/test_mpi.c.o -o cmTC_8ba8f  /usr/lib/libmpi.so
+        make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        make[1]: Leaving directory '/scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-ZE3szR'
+        make: warning:  Clock skew detected.  Your build may be incomplete.
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-bPYz3b"
+      binary: "/scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-bPYz3b"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -g -O3 -fopt-info-vec-all"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-bPYz3b'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7b118/fast
+        make: Warning: File 'Makefile' has modification time 23 s in the future
+        /usr/bin/make  -f CMakeFiles/cmTC_7b118.dir/build.make CMakeFiles/cmTC_7b118.dir/build
+        make[1]: Entering directory '/scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-bPYz3b'
+        make[1]: Warning: File 'CMakeFiles/cmTC_7b118.dir/build.make' has modification time 23 s in the future
+        Building C object CMakeFiles/cmTC_7b118.dir/test_mpi.c.o
+        /usr/bin/cc   -g -O3 -fopt-info-vec-all  -std=gnu17 -o CMakeFiles/cmTC_7b118.dir/test_mpi.c.o -c /scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-bPYz3b/test_mpi.c
+        /scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-bPYz3b/test_mpi.c:27:3: missed: statement clobbers memory: puts (&mpiver_str);
+        /scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-bPYz3b/test_mpi.c:34:3: missed: statement clobbers memory: MPI_Init (&argc, &argv);
+        /scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-bPYz3b/test_mpi.c:35:3: missed: statement clobbers memory: MPI_Finalize ();
+        /scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-bPYz3b/test_mpi.c:35:3: note: ***** Analysis failed with vector mode VOID
+        Linking C executable cmTC_7b118
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b118.dir/link.txt --verbose=1
+        /usr/bin/cc  -g -O3 -fopt-info-vec-all  -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags CMakeFiles/cmTC_7b118.dir/test_mpi.c.o -o cmTC_7b118  /usr/lib/libmpi.so
+        make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        make[1]: Leaving directory '/scratch/students/users/user1134/TOP-project/build/CMakeFiles/CMakeScratch/TryCompile-bPYz3b'
+        make: warning:  Clock skew detected.  Your build may be incomplete.
+        
+      exitCode: 0
+...

@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/scratch/students/users/user1134/TOP-project/include -I/scratch/students/users/user1134/TOP-project/src/../include
 
-C_FLAGS = -std=gnu17 -fdiagnostics-color=always
+C_FLAGS =  -g -O3 -fopt-info-vec-all -std=gnu17 -fdiagnostics-color=always
 
