@@ -68,12 +68,8 @@ static void save_results(
 i32 main(i32 argc, char* argv[argc + 1]) {
     
     MPI_Init(&argc, &argv);
-    omp_set_num_threads(4);  // Set the number of threads to 4
-#pragma omp parallel
-    {
-        int tid = omp_get_thread_num();
-        printf("Hello from thread %d\n", tid);
-    }
+   
+    omp_set_num_threads(10);
 
     i32 rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);

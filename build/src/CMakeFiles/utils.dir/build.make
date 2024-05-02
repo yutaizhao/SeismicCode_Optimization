@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling"
+CMAKE_SOURCE_DIR = /scratch/students/users/user1134/TOP-project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build"
+CMAKE_BINARY_DIR = /scratch/students/users/user1134/TOP-project/build
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/utils.dir/depend.make
@@ -70,18 +70,18 @@ include src/CMakeFiles/utils.dir/progress.make
 include src/CMakeFiles/utils.dir/flags.make
 
 src/CMakeFiles/utils.dir/chrono.c.o: src/CMakeFiles/utils.dir/flags.make
-src/CMakeFiles/utils.dir/chrono.c.o: /scratch/students/users/user1134/TOP-project/other\ versions/TOP-project-aligned_restrict_restruct_tiling/src/chrono.c
+src/CMakeFiles/utils.dir/chrono.c.o: /scratch/students/users/user1134/TOP-project/src/chrono.c
 src/CMakeFiles/utils.dir/chrono.c.o: src/CMakeFiles/utils.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/utils.dir/chrono.c.o"
-	cd "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build/src" && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/utils.dir/chrono.c.o -MF CMakeFiles/utils.dir/chrono.c.o.d -o CMakeFiles/utils.dir/chrono.c.o -c "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/src/chrono.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/scratch/students/users/user1134/TOP-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/utils.dir/chrono.c.o"
+	cd /scratch/students/users/user1134/TOP-project/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/utils.dir/chrono.c.o -MF CMakeFiles/utils.dir/chrono.c.o.d -o CMakeFiles/utils.dir/chrono.c.o -c /scratch/students/users/user1134/TOP-project/src/chrono.c
 
 src/CMakeFiles/utils.dir/chrono.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/utils.dir/chrono.c.i"
-	cd "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build/src" && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/src/chrono.c" > CMakeFiles/utils.dir/chrono.c.i
+	cd /scratch/students/users/user1134/TOP-project/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /scratch/students/users/user1134/TOP-project/src/chrono.c > CMakeFiles/utils.dir/chrono.c.i
 
 src/CMakeFiles/utils.dir/chrono.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/utils.dir/chrono.c.s"
-	cd "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build/src" && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/src/chrono.c" -o CMakeFiles/utils.dir/chrono.c.s
+	cd /scratch/students/users/user1134/TOP-project/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /scratch/students/users/user1134/TOP-project/src/chrono.c -o CMakeFiles/utils.dir/chrono.c.s
 
 # Object files for target utils
 utils_OBJECTS = \
@@ -93,18 +93,18 @@ utils_EXTERNAL_OBJECTS =
 src/libutils.so: src/CMakeFiles/utils.dir/chrono.c.o
 src/libutils.so: src/CMakeFiles/utils.dir/build.make
 src/libutils.so: src/CMakeFiles/utils.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library libutils.so"
-	cd "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build/src" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/utils.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/scratch/students/users/user1134/TOP-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library libutils.so"
+	cd /scratch/students/users/user1134/TOP-project/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/utils.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/utils.dir/build: src/libutils.so
 .PHONY : src/CMakeFiles/utils.dir/build
 
 src/CMakeFiles/utils.dir/clean:
-	cd "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build/src" && $(CMAKE_COMMAND) -P CMakeFiles/utils.dir/cmake_clean.cmake
+	cd /scratch/students/users/user1134/TOP-project/build/src && $(CMAKE_COMMAND) -P CMakeFiles/utils.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/utils.dir/clean
 
 src/CMakeFiles/utils.dir/depend:
-	cd "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling" "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/src" "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build" "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build/src" "/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct_tiling/build/src/CMakeFiles/utils.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd /scratch/students/users/user1134/TOP-project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /scratch/students/users/user1134/TOP-project /scratch/students/users/user1134/TOP-project/src /scratch/students/users/user1134/TOP-project/build /scratch/students/users/user1134/TOP-project/build/src /scratch/students/users/user1134/TOP-project/build/src/CMakeFiles/utils.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : src/CMakeFiles/utils.dir/depend
 

@@ -1,1 +1,1 @@
-/usr/bin/cc -fPIC  -g -O3 -fopt-info-vec-all -shared -Wl,-soname,libutils.so -o libutils.so CMakeFiles/utils.dir/chrono.c.o
+/usr/bin/cc -fPIC  -g -O3 -fopt-info-vec-all -fopenmp -shared -Wl,-soname,libutils.so -o libutils.so CMakeFiles/utils.dir/chrono.c.o
