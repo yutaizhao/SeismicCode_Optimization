@@ -1,0 +1,62 @@
+SHELL=/bin/bash
+__MODULES_LMALTNAME=maqao/2.20.1&as|maqao/default&as|maqao/latest
+PWD=/scratch/students/users/user1134/TOP-project/build
+LOGNAME=user1134
+XDG_SESSION_TYPE=tty
+MODULESHOME=/etc/modules
+MANPATH=/opt/other/maqao/2.20.1/man
+_=/usr/bin/env
+MOTD_SHOWN=pam
+HOME=/scratch/students/users/user1134
+LANG=C.UTF-8
+__MODULES_LMCONFLICT=maqao/2.20.1&maqao
+SSH_CONNECTION=192.168.1.2 52034 192.168.1.11 22
+XDG_SESSION_CLASS=user
+TERM=xterm-256color
+USER=user1134
+LOADEDMODULES=maqao/2.20.1
+SHLVL=1
+XDG_SESSION_ID=139
+XDG_RUNTIME_DIR=/run/user/1134
+SSH_CLIENT=192.168.1.2 52034 22
+__MODULES_LMINIT=module use --append /opt/modulefiles:module use --append /opt/intel/oneapi/modulefiles
+DEBUGINFOD_URLS=https://debuginfod.archlinux.org 
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
+PATH=/opt/other/maqao/2.20.1/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+MODULEPATH=/opt/modulefiles:/opt/intel/oneapi/modulefiles
+_LMFILES_=/opt/modulefiles/maqao/2.20.1
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1134/bus
+MAIL=/var/spool/mail/user1134
+SSH_TTY=/dev/pts/0
+OLDPWD=/scratch/students/users/user1134/TOP-project
+MODULES_CMD=/usr/lib/env-modules/modulecmd.tcl
+BASH_FUNC_ml%%=() {  module ml "$@"
+}
+BASH_FUNC_module%%=() {  local _mlredir=1;
+ if [ -n "${MODULES_REDIRECT_OUTPUT+x}" ]; then
+ if [ "$MODULES_REDIRECT_OUTPUT" = '0' ]; then
+ _mlredir=0;
+ else
+ if [ "$MODULES_REDIRECT_OUTPUT" = '1' ]; then
+ _mlredir=1;
+ fi;
+ fi;
+ fi;
+ case " $@ " in 
+ *' --no-redirect '*)
+ _mlredir=0
+ ;;
+ *' --redirect '*)
+ _mlredir=1
+ ;;
+ esac;
+ if [ $_mlredir -eq 0 ]; then
+ _module_raw "$@";
+ else
+ _module_raw "$@" 2>&1;
+ fi
+}
+BASH_FUNC__module_raw%%=() {  eval "$(/usr/bin/tclsh '/usr/lib/env-modules/modulecmd.tcl' bash "$@")";
+ _mlstatus=$?;
+ return $_mlstatus
+}
