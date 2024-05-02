@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 project(top-stencil LANGUAGES C DESCRIPTION "3D stencil with MPI")
-
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O3 -fopt-info-vec-all")
 set(CMAKE_COLOR_DIAGNOSTICS ON)
 set(CMAKE_C_STANDARD 17)
 
