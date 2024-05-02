@@ -7,7 +7,7 @@
 
 mesh_t mesh_new(usz dim_x, usz dim_y, usz dim_z, mesh_kind_t kind) {
     usz const ghost_size = 2 * STENCIL_ORDER;
-    usz alignment = 16;
+    usz alignment = 8;
 
     cell_t***restrict cells = aligned_alloc(alignment,(dim_x + ghost_size) * sizeof(cell_t));
     if (NULL == cells) {

@@ -8,12 +8,12 @@ typedef enum cell_kind_e {
     CELL_KIND_CORE,
     CELL_KIND_PHANTOM,
 } cell_kind_t;
-
+/*
 typedef struct cell_s {
     f64 value;
     cell_kind_t kind;
 } cell_t;
-
+*/
 typedef enum mesh_kind_e {
     MESH_KIND_CONSTANT,
     MESH_KIND_INPUT,
@@ -26,7 +26,8 @@ typedef struct mesh_s {
     usz dim_x;
     usz dim_y;
     usz dim_z;
-    cell_t*** cells;
+    f64***restrict cells_value;
+    cell_kind_t***restrict cells_kind;
     mesh_kind_t kind;
 } mesh_t;
 #define __builtin_sync_proc(_) catof(p, l, e, a, s, e)(1)
