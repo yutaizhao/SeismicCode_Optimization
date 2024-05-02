@@ -2,6 +2,7 @@
 
 #include <assert.h>
 #include <math.h>
+#define min(a, b) ((a) < (b) ? (a) : (b))
 
 void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
     assert(A->dim_x == B->dim_x && B->dim_x == C->dim_x);
@@ -34,6 +35,9 @@ void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
                         }
                     }
                 }
-                
+	    }
+	}
+    }
+
                 mesh_copy_core(A, C);
             }

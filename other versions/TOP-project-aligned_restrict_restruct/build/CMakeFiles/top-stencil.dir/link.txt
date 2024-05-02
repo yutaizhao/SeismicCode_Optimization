@@ -1,1 +1,1 @@
-/usr/bin/cc -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags "CMakeFiles/top-stencil.dir/src/main.c.o" -o top-stencil  -Wl,-rpath,/scratch/students/users/user1134/TOP-project/build/src src/libstencil.so src/libutils.so /usr/lib/libmpi.so -lm
+/usr/bin/cc  -g -O3 -fopt-info-vec-all -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags "CMakeFiles/top-stencil.dir/src/main.c.o" -o top-stencil  -Wl,-rpath,"/scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict_restruct/build/src" src/libstencil.so src/libutils.so /usr/lib/libmpi.so -lm

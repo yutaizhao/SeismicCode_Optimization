@@ -1,4 +1,4 @@
-# Install script for directory: /scratch/students/users/user1134/TOP-project/src
+# Install script for directory: /scratch/students/users/user1134/TOP-project/other versions/TOP-project-aligned_restrict/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
