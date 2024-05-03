@@ -113,25 +113,14 @@ void mesh_copy_core(mesh_t* dst, mesh_t const* src) {
     assert(dst->dim_y == src->dim_y);
     assert(dst->dim_z == src->dim_z);
     
-    usz bloci = 32;
-    usz blocj = 32;
-    usz block = 32;
-    
 #pragma omp parallel for proc_bind(spread)
-    for (usz ii = STENCIL_ORDER; ii < dst->dim_x - STENCIL_ORDER; ii += bloci) {
-        for (usz jj = STENCIL_ORDER; jj < dst->dim_y - STENCIL_ORDER; jj += blocj) {
-            for (usz kk = STENCIL_ORDER; kk < dst->dim_z - STENCIL_ORDER; kk += block) {
-                
-                for (usz i = ii; i < min(ii + bloci, dim_x - STENCIL_ORDER); ++i) {
-                    for (usz j = jj; j < min(jj + blocj, dim_y - STENCIL_ORDER); ++j) {
+    for (usz i = STENCIL_ORDER; i  < dst->dim_x - STENCIL_ORDER; ++i) {
+        for (usz j = STENCIL_ORDER; j < dst->dim_y - STENCIL_ORDER; ++j) {   
 #pragma unroll(4)
-                        for (usz k = kk; k < min(kk + block, dim_z - STENCIL_ORDER); ++k) {
+            for (usz k = STENCIL_ORDER; k < dst->dim_z - STENCIL_ORDER; ++k) {
                             assert(dst->cells_kind[i][j][k] == CELL_KIND_CORE);
                             assert(src->cells_kind[i][j][k] == CELL_KIND_CORE);
                             dst->cells_value[i][j][k] = src->cells_value[i][j][k];
-                        }
-                    }
-                }
             }
         }
     }

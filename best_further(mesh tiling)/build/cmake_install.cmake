@@ -1,4 +1,4 @@
-# Install script for directory: /scratch/students/users/user1134/TOP-project/best
+# Install script for directory: /scratch/students/users/user1134/TOP-project/best_further(mesh tiling)
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/scratch/students/users/user1134/TOP-project/best/build/src/cmake_install.cmake")
+  include("/scratch/students/users/user1134/TOP-project/best_further(mesh tiling)/build/src/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/scratch/students/users/user1134/TOP-project/best/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/scratch/students/users/user1134/TOP-project/best_further(mesh tiling)/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

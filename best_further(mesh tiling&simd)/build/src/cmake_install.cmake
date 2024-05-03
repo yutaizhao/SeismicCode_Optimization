@@ -1,4 +1,4 @@
-# Install script for directory: /scratch/students/users/user1134/TOP-project/best/src
+# Install script for directory: /scratch/students/users/user1134/TOP-project/best_further(mesh tiling&simd)/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
