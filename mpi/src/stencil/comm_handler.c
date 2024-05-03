@@ -25,8 +25,8 @@ static char* stringify(char buf[static MAXLEN], i32 num) {
 comm_handler_t comm_handler_new(u32 rank, u32 comm_size, usz dim_x, usz dim_y, usz dim_z) {
     // Compute splitting
     u32 const nb_x = gcd(comm_size, (u32)(dim_x * dim_y));
-    u32 const nb_y = gcd(comm_size / nb_z, (u32)dim_z);
-    u32 const nb_z = (comm_size / nb_z) / nb_y;
+    u32 const nb_y = gcd(comm_size / nb_x, (u32)dim_z);
+    u32 const nb_z = (comm_size / nb_x) / nb_y;
 
     if (comm_size != nb_x * nb_y * nb_z) {
         error(
@@ -37,9 +37,9 @@ comm_handler_t comm_handler_new(u32 rank, u32 comm_size, usz dim_x, usz dim_y, u
     }
 
     // Compute current rank position
-    u32 const rank_x = rank / (comm_size / nb_z);
+    u32 const rank_z = rank / (comm_size / nb_z);
     u32 const rank_y = (rank % (comm_size / nb_z)) / (comm_size / nb_y);
-    u32 const rank_z = (rank % (comm_size / nb_z)) % (comm_size / nb_y);
+    u32 const rank_x = (rank % (comm_size / nb_z)) % (comm_size / nb_y);
 
     // Setup size
     usz const loc_dim_z = (rank_z == nb_z - 1) ? dim_z / nb_z + dim_z % nb_z : dim_z / nb_z;

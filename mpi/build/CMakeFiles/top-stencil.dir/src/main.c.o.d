@@ -1,8 +1,8 @@
 CMakeFiles/top-stencil.dir/src/main.c.o: \
- /scratch/students/users/user1134/TOP-project/src/main.c \
+ /scratch/students/users/user1134/TOP/TOP-project/mpi/src/main.c \
  /usr/include/stdc-predef.h \
- /scratch/students/users/user1134/TOP-project/include/chrono.h \
- /scratch/students/users/user1134/TOP-project/include/types.h \
+ /scratch/students/users/user1134/TOP/TOP-project/mpi/include/chrono.h \
+ /scratch/students/users/user1134/TOP/TOP-project/mpi/include/types.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdbool.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
@@ -22,7 +22,7 @@ CMakeFiles/top-stencil.dir/src/main.c.o: \
  /usr/include/bits/types/timer_t.h \
  /usr/include/bits/types/struct_itimerspec.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
- /scratch/students/users/user1134/TOP-project/include/logging.h \
+ /scratch/students/users/user1134/TOP/TOP-project/mpi/include/logging.h \
  /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h \
  /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
@@ -43,10 +43,10 @@ CMakeFiles/top-stencil.dir/src/main.c.o: \
  /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
  /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
- /scratch/students/users/user1134/TOP-project/include/stencil/comm_handler.h \
- /scratch/students/users/user1134/TOP-project/include/stencil/mesh.h \
+ /scratch/students/users/user1134/TOP/TOP-project/mpi/include/stencil/comm_handler.h \
+ /scratch/students/users/user1134/TOP/TOP-project/mpi/include/stencil/mesh.h \
  /usr/include/mpi.h /usr/include/mpi_portable_platform.h \
- /scratch/students/users/user1134/TOP-project/include/stencil/config.h \
- /scratch/students/users/user1134/TOP-project/include/stencil/init.h \
- /scratch/students/users/user1134/TOP-project/include/stencil/solve.h \
+ /scratch/students/users/user1134/TOP/TOP-project/mpi/include/stencil/config.h \
+ /scratch/students/users/user1134/TOP/TOP-project/mpi/include/stencil/init.h \
+ /scratch/students/users/user1134/TOP/TOP-project/mpi/include/stencil/solve.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/omp.h
