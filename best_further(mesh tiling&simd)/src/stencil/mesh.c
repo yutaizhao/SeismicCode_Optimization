@@ -5,6 +5,8 @@
 #include <assert.h>
 #include <stdlib.h>
 
+#define min(a, b) ((a) < (b) ? (a) : (b))
+
 mesh_t mesh_new(usz dim_x, usz dim_y, usz dim_z, mesh_kind_t kind) {
     usz const ghost_size = 2 * STENCIL_ORDER;
     usz alignment = 8;
@@ -120,10 +122,10 @@ void mesh_copy_core(mesh_t* dst, mesh_t const* src) {
         for (usz jj = STENCIL_ORDER; jj < dst->dim_y - STENCIL_ORDER; jj += blocj) {
             for (usz kk = STENCIL_ORDER; kk < dst->dim_z - STENCIL_ORDER; kk += block) {
                 
-                for (usz i = ii; i < ii + bloci && i < dst->dim_x - STENCIL_ORDER; ++i) {
-                    for (usz j = jj; j < jj + blocj && j < dst->dim_y - STENCIL_ORDER; ++j) {
-#pragma omp simd
-                        for (usz k = kk; k < kk + block && k < dst->dim_z - STENCIL_ORDER; ++k) {
+                for (usz i = ii; i < min(ii + bloci, dim_x - STENCIL_ORDER); ++i) {
+                    for (usz j = jj; j < min(jj + blocj, dim_y - STENCIL_ORDER); ++j) {
+#pragma unroll(4)
+                        for (usz k = kk; k < min(kk + block, dim_z - STENCIL_ORDER); ++k) {
                             assert(dst->cells_kind[i][j][k] == CELL_KIND_CORE);
                             assert(src->cells_kind[i][j][k] == CELL_KIND_CORE);
                             dst->cells_value[i][j][k] = src->cells_value[i][j][k];
@@ -134,3 +136,4 @@ void mesh_copy_core(mesh_t* dst, mesh_t const* src) {
         }
     }
 }
+
