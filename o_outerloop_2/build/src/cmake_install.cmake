@@ -1,4 +1,4 @@
-# Install script for directory: /scratch/students/users/user1134/TOP/TOP-project/3/src
+# Install script for directory: /scratch/students/users/user1134/TOP-project/o_outerloop_2/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

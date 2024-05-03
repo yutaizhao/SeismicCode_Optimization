@@ -26,7 +26,7 @@ void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
                     
                     for (usz i = ii; i < min(ii + bloci, dim_x - STENCIL_ORDER); i++) {
                         for (usz j = jj; j < min(jj + blocj, dim_y - STENCIL_ORDER); j++) {
-                            for (usz k = kk; k < min(kk + block, dim_z - STENCIL_ORDER); k++) {
+				for (usz k = kk; k < min(kk + block, dim_z - STENCIL_ORDER); k++) {
                                 if(o == 1) {
                                     C->cells_value[i][j][k] = A->cells_value[i][j][k] * B->cells_value[i][j][k];
                                 }
