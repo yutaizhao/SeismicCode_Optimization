@@ -13,16 +13,18 @@ void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
     usz const dim_x = A->dim_x;
     usz const dim_y = A->dim_y;
     usz const dim_z = A->dim_z;
-    usz bloci = 4 ;
+    usz bloci = 10 ;
     usz blocj = 8 ;
-    usz block = 8 ;
-#pragma omp parallel for
+    usz block = 8;
+    
+#pragma omp parallel for proc_bind(spread)
     for (usz ii = STENCIL_ORDER; ii < dim_x - STENCIL_ORDER; ii += bloci) {
-        for (usz jj = STENCIL_ORDER; jj < dim_y - STENCIL_ORDER; jj += blocj) {
-            for (usz kk = STENCIL_ORDER; kk < dim_z - STENCIL_ORDER; kk += block) {
-                for (usz k = kk; k < min(kk + block, dim_z - STENCIL_ORDER); k++) {
-                    for (usz j = jj; j < min(jj + blocj, dim_y - STENCIL_ORDER); j++) {
-                        for (usz i = ii; i < min(ii + bloci, dim_x - STENCIL_ORDER); i++) {
+	    for (usz jj = STENCIL_ORDER; jj < dim_y - STENCIL_ORDER; jj += blocj) {
+		    for (usz kk = STENCIL_ORDER; kk < dim_z - STENCIL_ORDER; kk += block) {
+		for (usz i = ii; i < min(ii + bloci, dim_x - STENCIL_ORDER); i++) {
+          for (usz j = jj; j < min(jj + blocj, dim_y - STENCIL_ORDER); j++) {
+#pragma unroll       
+for (usz k = kk; k < min(kk + block, dim_z - STENCIL_ORDER); k++) {
                             C->cells_value[i][j][k] = A->cells_value[i][j][k] * B->cells_value[i][j][k];
                             
                             for (usz o = 1; o <= STENCIL_ORDER; ++o) {
@@ -31,7 +33,7 @@ void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
                                                              (A->cells_value[i][j + o][k]  * B->cells_value[i][j + o][k] ) +
                                                              (A->cells_value[i][j - o][k]  * B->cells_value[i][j - o][k] ) +
                                                              (A->cells_value[i][j][k + o]  * B->cells_value[i][j][k + o] ) +
-                                                             (A->cells_value[i][j][k - o]  * B->cells_value[i][j][k - o] ))/pow(17.0,-(f64)o;
+                                                             (A->cells_value[i][j][k - o]  * B->cells_value[i][j][k - o] ))/pow(17.0,(f64)o);
                             }
                         }
                     }
@@ -39,6 +41,5 @@ void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
             }
         }
     }
-    
     mesh_copy_core(A, C);
 }

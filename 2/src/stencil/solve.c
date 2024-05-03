@@ -26,7 +26,7 @@ void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
                             C->cells_value[i][j][k] = A->cells_value[i][j][k] * B->cells_value[i][j][k];
                             
                             for (usz o = 1; o <= STENCIL_ORDER; ++o) {
-                                C->cells_value[i][j][k]  += 1/pow(17.0,(f64)-o*
+                                C->cells_value[i][j][k]  += 1/pow(17.0,(f64)-o)*
                                                             ((A->cells_value[i + o][j][k] * B->cells_value[i + o][j][k] ) +
                                                              (A->cells_value[i - o][j][k] * B->cells_value[i - o][j][k] ) +
                                                              (A->cells_value[i][j + o][k]  * B->cells_value[i][j + o][k] ) +

@@ -11,7 +11,7 @@ static f64 compute_core_pressure(usz i, usz j, usz k) {
 }
 
 static void setup_mesh_cell_values(mesh_t* mesh, comm_handler_t const* comm_handler) {
-#pragma omp parallel for
+#pragma omp parallel for proc_bind(spread)
     for (usz i = 0; i < mesh->dim_x; ++i) {
         for (usz j = 0; j < mesh->dim_y; ++j) {
             for (usz k = 0; k < mesh->dim_z; ++k) {
@@ -45,7 +45,7 @@ static void setup_mesh_cell_values(mesh_t* mesh, comm_handler_t const* comm_hand
 }
 
 static void setup_mesh_cell_kinds(mesh_t* mesh) {
-#pragma omp parallel for
+#pragma omp parallel for proc_bind(spread)
     for (usz i = 0; i < mesh->dim_x; ++i) {
         for (usz j = 0; j < mesh->dim_y; ++j) {
             for (usz k = 0; k < mesh->dim_z; ++k) {

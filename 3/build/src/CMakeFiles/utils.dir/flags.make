@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -Dutils_EXPORTS
 
-C_INCLUDES = -I/scratch/students/users/user1134/TOP-project/src/../include
+C_INCLUDES = -I/scratch/students/users/user1134/TOP/TOP-project/3/src/../include
 
 C_FLAGS =  -g -O3 -fopt-info-vec-all -fopenmp -std=gnu17 -fPIC -fdiagnostics-color=always
 
