@@ -1,0 +1,1 @@
+/usr/bin/cc  -g -Wl,-rpath -Wl,/usr/lib -Wl,--enable-new-dtags "CMakeFiles/top-stencil.dir/src/main.c.o" -o top-stencil  -Wl,-rpath,/scratch/students/users/user1134/TOP-project/TOP-project-original/build/src src/libstencil.so src/libutils.so /usr/lib/libmpi.so -lm
