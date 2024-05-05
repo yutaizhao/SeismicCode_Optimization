@@ -10,7 +10,7 @@
 #include <mpi.h>
 #include <stdio.h>
 
-static char* DEFAULT_CONFIG_PATH = "config.txt";
+static char* DEFAULT_CONFIG_PATH = "../config.txt";
 static char* DEFAULT_OUTPUT_PATH = NULL;
 
 static void save_results(
