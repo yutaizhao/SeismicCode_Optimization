@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC  -g -O3 -fopt-info-vec-all -fopenmp -shared -Wl,-soname,libstencil.so -o libstencil.so CMakeFiles/stencil.dir/stencil/config.c.o CMakeFiles/stencil.dir/stencil/comm_handler.c.o CMakeFiles/stencil.dir/stencil/mesh.c.o CMakeFiles/stencil.dir/stencil/init.c.o CMakeFiles/stencil.dir/stencil/solve.c.o  -lm
