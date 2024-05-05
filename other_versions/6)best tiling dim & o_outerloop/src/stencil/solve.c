@@ -13,9 +13,9 @@ void solve_jacobi(mesh_t* A, mesh_t const* B, mesh_t* C) {
     usz const dim_x = A->dim_x;
     usz const dim_y = A->dim_y;
     usz const dim_z = A->dim_z;
-    usz bloci = 8;
-    usz blocj = 8;
-    usz block = 8;
+    usz bloci = 10 ;
+    usz blocj = 40;
+    usz block = 40;
     
     for (usz o = 1; o <= STENCIL_ORDER; ++o) {
         f64 denom = 1/pow(17.0,(f64)o);
