@@ -14,7 +14,7 @@ Or, pour 1 iteration de la boule externe (ie: jacobi fixe) de la nouvelle versio
 
 <img width="427" alt="jacobxyz" src="https://github.com/yutaizhao/TOP-project/assets/15853429/39ee131e-4b05-4be3-9049-0f2203ddc17d">
 
-Ainsi, pour la 1ere version, on essaye d'avoir tous les elements de xyz dans le cache avant qu'ils soient vidés...mais 
+Ainsi, pour la 1ere version, on essaye d'avoir tous les elements de xyz en gathering les cellules voisins ...mais 
 pour la 2eme version, on essaye de beneficie au maximum le parcours sur les elements de l'axe z puis on ajuste y puis x , car le parcours de la nouvelle version forme des plans en profondeur(l'axe z) 
 
 On a enfin :
